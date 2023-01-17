@@ -13,7 +13,7 @@ import { ActionController } from './controllers/action.controller';
 const apiAdapters = apiAdaptersGenerator();
 const logger = new Logger();
 const messageService = new MessageService();
-const helperService = new HelperService(messageService);
+const helperService = new HelperService();
 
 // services
 const actionService = new ActionService(messageService, logger, helperService);
