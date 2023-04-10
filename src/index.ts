@@ -7,9 +7,10 @@ import bot from './bot';
 
 // start application
 const start = async () => {
-  bot.launch();
+  await bot.launch();
   console.log('APP STARTED!');
 };
+
 start();
 
 // Enable graceful stop
