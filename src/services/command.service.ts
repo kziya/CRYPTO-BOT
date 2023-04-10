@@ -143,6 +143,7 @@ class CommandService {
     const apiPriceResults = await this.getSelectedAdaptersPrice(user, currency);
     for (const apiPriceResult of apiPriceResults) {
       if (apiPriceResult.error) {
+        this.logger.info(apiPriceResult.error);
         this.messageService.replyExchangeMessage(
           ctx,
           apiPriceResult.name,
@@ -171,6 +172,7 @@ class CommandService {
         const price = await adapter.getPrice(currency);
         apiPriceResults.push(new ApiPriceResultDto(adapter.name, price, false));
       } catch (e) {
+        this.logger.error(e);
         //  an axios error (means that the currency is wrong or not exists in this exchange)
         apiPriceResults.push(new ApiPriceResultDto(adapter.name, 0, true));
       }

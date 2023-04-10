@@ -4,7 +4,7 @@
   "description": " Telegram bot for cryptocurrency prices",
   "scripts": {
     "start": "cross-env NODE_ENV=\"prod.env\" ts-node ./src/index.ts",
-    "start:dev": "cross-env NODE_ENV=\"dev.env\" nodemon ./src/index.ts",
+    "start:dev": "cross-env NODE_ENV=\"prod.env\" nodemon ./src/index.ts",
     "update": "cross-env NODE_ENV=\"dev.env\" ts-node ./src/update.ts",
     "format": "prettier --write \"src/**/*.ts\" \"src/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix",
